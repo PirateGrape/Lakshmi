@@ -1,6 +1,77 @@
-.unit {
-    display: block;
-    background-color: red;
-    height: 200px;
-    width: 30%;
+/* Static */
+
+.menu-card {
+    position: relative;
+    height: 15%;
+    width: fit-content;
+    max-width: 10%;
+    border: 0.1em solid #FBCEB5;
+    border-radius: 10%;
+    background-color: #FFF851;
+    transition: all 1s;
+
+}
+
+.pracName,
+.master,
+.date,
+.place {
+    background-color: #FFFCBB;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.day {
+    position: absolute;
+    border: 1px solid black;
+}
+
+/* Dynamic */
+
+/* Card resizing */
+.menu-card:hover {
+    height: 10%;
+    max-width: 15%;
+}
+
+/* Image static and dynamic */
+.menu-card img {
+    width: 100%;
+    float: none;
+    position: relative;
+}
+
+/* Image static and dynamic */
+.menu-card:hover img {
+    float: none;
+    animation: pix 1.5s forwards;
+}
+
+/* Text static and pre-dynamic */
+.menu-card .text {
+    font-size: 0%;
+}
+
+/* Text dynamic */
+.menu-card:hover .text {
+    animation: app 1.5s forwards;
+}
+
+/* Animations */
+
+@keyframes app {
+    100% {
+        font-size: 100%;
+    }
+}
+
+@keyframes pix {
+    10% {
+        float: right;
+    }
+
+    100% {
+        width: 60%;
+        float: right;
+    }
 }

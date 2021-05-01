@@ -7,14 +7,22 @@ export default class SchedRow extends Component {
 
     render() {
         const { schedule } = this.props; //Вытащил расписание из пропсов, заложенных выше
-        const elems = schedule.map(unit => {//Перебрал весь массив расписания, сделав массив юнитов
-            const { key, text } = unit;
+        const elems = schedule.map(unit => {//Перебрал весь массив объектов расписания, сделав массив юнитов
+            const { key, day, pracName, pic, mName, date, time, place } = unit;
+            
 
             return (
                 <SchedUnit
                     className='unit' 
+                    schedule={unit}
                     key={key}
-                    text={text}/>//Закладываю текст из расписания в пропсы юнита
+                    day={day}
+                    pracName={pracName}
+                    pic={pic}
+                    mName={mName}
+                    date={date}
+                    time={time}
+                    place={place}/>//Закладываю все из расписания в пропсы юнита
             )
         })
 
