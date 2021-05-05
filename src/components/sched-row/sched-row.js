@@ -6,15 +6,14 @@ import '../../styles/sched-row.css'
 export default class SchedRow extends Component {
 
     render() {
-        const { schedule } = this.props; //Вытащил расписание из пропсов, заложенных выше
-        const elems = schedule.map(unit => {//Перебрал весь массив объектов расписания, сделав массив юнитов
+        const { dynSched } = this.props; //Вытащил расписание из пропсов, заложенных выше
+        const elems = dynSched.map(unit => {//Перебрал весь массив объектов расписания, сделав массив юнитов
             const { key, day, pracName, pic, mName, date, time, place } = unit;
-            
 
             return (
                 <SchedUnit
-                    className='unit' 
-                    schedule={unit}
+                    className='unit'
+                    dynSched={unit}
                     key={key}
                     day={day}
                     pracName={pracName}
@@ -22,7 +21,7 @@ export default class SchedRow extends Component {
                     mName={mName}
                     date={date}
                     time={time}
-                    place={place}/>//Закладываю все из расписания в пропсы юнита
+                    place={place} />//Закладываю все из расписания в пропсы юнита
             )
         })
 
