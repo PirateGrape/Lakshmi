@@ -1,4 +1,5 @@
 const masterList = [
+    {name: 'Все', key: 'All'},
     {name: 'Галина', key: 'gal'},
     {name: 'Вера', key: 'ver'},
     {name: 'Мария', key: 'mari'},

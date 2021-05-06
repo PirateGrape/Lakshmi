@@ -1,4 +1,5 @@
 const pracList = [
+    {name: 'Все', key: 'All'},
     {name:'Раджака', key: 'rajaka'}, 
     {name:'Супта', key: 'supta'}, 
     {name: 'Будха', key: 'budha'}, 
@@ -8,7 +9,7 @@ const pracList = [
     {name:'Сету Бандха', key: 'setuBandha'}, 
     {name:'Армус', key: 'armus'}, 
     {name:'Париврита', key: 'parivrita'}, 
-    {name:'Цикл война', key:'warCycle'}, 
+    {name:'Цикл воина', key:'warCycle'}, 
     {name: 'Самакона', key:'samakona'}, 
     {name: 'Ханумана', key: 'hanumana'}];
 

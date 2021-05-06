@@ -17,9 +17,9 @@ export default class FilterMas extends Component {
         )
         return (
             <select
+                id='filter'
                 className='mas'
                 onChange={onFilterSched}>
-                <option>Все</option>
                 {options}
             </select>
         )
