@@ -36,13 +36,12 @@ export default class App extends Component {
     selectFilter.forEach(select => { select.value = 'Все' })
   }
 
-  onFilterSched = (e) => {//Сама функция-фильтр для расписания
-
+  getNewFilter = (e) => {//Функция для определения, что фильтруем
     let target = e.target,//Для упрощенной записи в будущем
       filterClass = target.className,//Для упрощенной записи в будущем
       filterValue = target.value;//Для упрощенной записи в будущем
 
-    switch (filterClass) {//Определение того, по чему фильтровать
+    switch (filterClass) {
       case 'mas':
         filterMas = filterValue;
         break
@@ -51,7 +50,12 @@ export default class App extends Component {
         break
       default:
     }
+  }
 
+  onFilterSched = (e) => {//Сама функция-фильтр для расписания
+
+    this.getNewFilter(e);
+    
     if (filterMas !== 'Все' && filterPrac === 'Все') {//Фильтрация только по мастеру
       const newSched = this._statSched.filter(item => {
         return item.mName === filterMas;
@@ -78,7 +82,7 @@ export default class App extends Component {
       return
     }
 
-    if (filterMas === 'Все' && filterPrac === 'Все') {//Сброс фильтра вручную
+    if (filterMas === 'Все' && filterPrac === 'Все') {//Сброс фильтра вручную, то есть если пользователь ставит значение 'все' во всех фильтрах
       this.onReset()
     }
   }
