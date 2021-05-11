@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import SchedRow from '../sched-row';
+import SchedMonth from '../sched-month';
 import FilterSched from '../filter-sched'
 
 import '../../styles/App.css'
+import '../../img/draft_pic.jpg'
 
 let filterPrac = 'Все', filterMas = 'Все';//Фильтры для расписания
 
@@ -12,14 +13,36 @@ export default class App extends Component {
 
     super(props);
     this.state = {//Динамическое расписание в стейте, потому что оно меняется
-      dynSched: [
-        { day: 'ПН', pracName: 'Будха', pic: '../../img/draft_pic.jpg', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
-        { day: 'СР', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
-        { day: 'ПТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
-        { day: 'ВТ', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
-        { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
-        { day: 'СБ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 },
+      dynSched: [//массив-месяц
+        [//массив-неделя
+          [//массив-день
+            { day: 'ПН', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
+            { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
+            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
+            { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
+            { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
+            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
+          ],
+          [//массив-день
+            { day: 'ВТ', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
+            { day: 'ВТ', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
+            { day: 'ВТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
+            { day: 'ВТ', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
+            { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
+            { day: 'ВТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
+          ],
+        ],
 
+        [//массив-неделя
+          [//массив-день
+            { day: 'ПН', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+            { day: 'ПН', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+            { day: 'ПН', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 10 },
+            { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
+          ]
+        ],
       ]
     };
     this._statSched = this.state.dynSched//Статическое расписание вне стейта, потому что оно не должно меняться
@@ -55,7 +78,7 @@ export default class App extends Component {
   onFilterSched = (e) => {//Сама функция-фильтр для расписания
 
     this.getNewFilter(e);
-    
+
     if (filterMas !== 'Все' && filterPrac === 'Все') {//Фильтрация только по мастеру
       const newSched = this._statSched.filter(item => {
         return item.mName === filterMas;
@@ -91,14 +114,14 @@ export default class App extends Component {
 
   render() {
 
-    const { dynSched } = this.state;//Достаю расписание из стейта, чтобы заложить его в ряды
+    const { dynSched } = this.state;//Достаю расписание из стейта, чтобы заложить его в расписание
     return (
       <>
         <FilterSched
           onFilterSched={this.onFilterSched}
           onReset={this.onReset}
         />
-        <SchedRow
+        <SchedMonth
           dynSched={dynSched} />
       </>
     );

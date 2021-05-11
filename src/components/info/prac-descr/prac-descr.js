@@ -15,7 +15,7 @@ const practices = {
 
 const {rajaka, supta, budha, ns, padma, balance, setuBandha, armus, parivrita, warCycle, samakona, hanumana} = practices;
 
-const switchText = function(name) {
+const switchText = function(name) {//Функция по определению, какой текст вставлять в карточку расписания, чтобы текст соответствовал названию практики
     let text;
     switch(name) {
         case 'Раджака':
