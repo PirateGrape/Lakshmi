@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SchedUnit from '../sched-unit';
 
-import '../../styles/sched-day.css'
+import '../../../styles/sched-day.css'
 
 export default class SchedDay extends Component {
 
@@ -10,7 +10,6 @@ export default class SchedDay extends Component {
 
         const elems = dynSched.map(unit => {//Перебрал весь массив объектов расписания, сделав массив юнитов
             const dynSched = [unit]
-            console.log(unit)
             return (
                 <SchedUnit
                     className='sched-unit'

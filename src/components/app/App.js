@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SchedMonth from '../sched-month';
+import SchedMonth from '../schedule/sched-month';
 import FilterSched from '../filter-sched'
 
 import '../../styles/App.css'
@@ -57,6 +57,16 @@ export default class App extends Component {
 
     const selectFilter = document.querySelectorAll('#filter');//Обнуление велью фильтров в интерфейсе
     selectFilter.forEach(select => { select.value = 'Все' })
+
+
+    const test = this._statSched.map(month => {
+      return month.map(week => {
+        return week.filter(day => {
+          return day.mName === 'Слава Хиль'
+        })
+      })
+    })
+    console.log(test)
   }
 
   getNewFilter = (e) => {//Функция для определения, что фильтруем
@@ -80,26 +90,42 @@ export default class App extends Component {
     this.getNewFilter(e);
 
     if (filterMas !== 'Все' && filterPrac === 'Все') {//Фильтрация только по мастеру
-      const newSched = this._statSched.filter(item => {
-        return item.mName === filterMas;
+      const newSched = this._statSched.map(month => {
+        return month.map(week => {
+          return week.filter(day => {
+            return day.mName === filterMas;
+          })
+        })
       })
       this.setState(() => { return { dynSched: newSched } })
       return
     }
 
     if (filterPrac !== 'Все' && filterMas === 'Все') {//Фильтрация только по практикам
-      const newSched = this._statSched.filter(item => {
-        return item.pracName === filterPrac;
+      const newSched = this._statSched.map(month => {
+        return month.map(week => {
+          return week.filter(day => {
+            return day.pracName === filterPrac
+          })
+        })
       })
       this.setState(() => { return { dynSched: newSched } })
       return
     }
 
     if ((filterMas !== 'Все') && (filterPrac !== 'Все')) {//Двойная фильтрация, то есть по определенным практикам определенного мастера
-      const newSched = (this._statSched.filter(item => {
-        return item.mName === filterMas;
-      })).filter(item => {
-        return item.pracName === filterPrac
+      const newSched = (this._statSched.map(month => {
+        return month.map(week => {
+          return week.filter(day => {
+            return day.mName === filterMas
+          })
+        })
+      })).map(month => {
+        return month.map(week => {
+          return week.filter(day => {
+            return day.pracName === filterPrac
+          })
+        })
       })
       this.setState(() => { return { dynSched: newSched } })
       return

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SchedDay from '../sched-day';
 
-import '../../styles/sched-week.css'
+import '../../../styles/sched-week.css'
 
 export default class SchedWeek extends Component {
     render() {

@@ -7,7 +7,6 @@ export default class SchedMonth extends Component {
         const { dynSched } = this.props;
         const month = dynSched.map(week => {
             const dynSched = week
-            console.log(week)
             return (
                 < SchedWeek
                 dynSched={dynSched}/>
