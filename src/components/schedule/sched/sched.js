@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SchedMonth from '../sched-month'
+import SchedMonth from '../sched-components/sched-month'
 import FilterSched from '../../filter-sched'
 
 let filterPrac = 'Все', filterMas = 'Все';//Фильтры для расписания
