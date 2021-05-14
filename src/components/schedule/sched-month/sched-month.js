@@ -9,7 +9,9 @@ export default class SchedMonth extends Component {
             const dynSched = week
             return (
                 < SchedWeek
-                dynSched={dynSched}/>
+                dynSched={dynSched}
+                key={week.length}
+                />
             )
         })
             

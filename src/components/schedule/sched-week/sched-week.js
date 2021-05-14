@@ -9,7 +9,8 @@ export default class SchedWeek extends Component {
         const week = dynSched.map(day => {
             const dynSched = day
             return (
-                <SchedDay dynSched={dynSched} />
+                <SchedDay dynSched={dynSched}
+                />
             )
         })
 
