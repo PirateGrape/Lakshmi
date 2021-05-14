@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "sched-week.css",
+	"sources": [
+		"../sass/sched-week.sass"
+	],
+	"sourcesContent": [
+		""
+	],
+	"names": [],
+	"mappings": ""
+}

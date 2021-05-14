@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SchedUnit from '../sched-unit';
 
-import '../../.././../styles/sched-day.css'
+import '../../../../styles/sched-day.css'
 
 export default class SchedDay extends Component {
 

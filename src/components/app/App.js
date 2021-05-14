@@ -11,7 +11,6 @@ import Schedule from '../schedule/sched'
 import About from '../about'
 
 import '../../styles/App.css'
-import '../../img/draft_pic.jpg'
 
 export default function App() {
 

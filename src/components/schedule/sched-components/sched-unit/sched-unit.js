@@ -3,7 +3,6 @@ import switchText from '../../../info/prac-descr'
 
 import '../../../../styles/sched-unit.css'
 
-
 export default class SchedUnit extends Component {
 
 

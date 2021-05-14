@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SchedWeek from '../sched-week';
 
+
 export default class SchedMonth extends Component {
 
     render() {
