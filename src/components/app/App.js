@@ -14,12 +14,8 @@ import '../../styles/App.css'
 
 export default function App() {
 
-  //
-
-  // render() {
-
   return (
-    <>
+    <div className='main-container'>
       <Router>
         <div>
           <nav>
@@ -36,9 +32,7 @@ export default function App() {
             </ul>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-          <Switch>
+           <Switch>
             <Route path="/about">
               <About />
             </Route>
@@ -51,7 +45,7 @@ export default function App() {
           </Switch>
         </div>
       </Router>
-    </>
+    </div>
   )
 
 }

@@ -5,8 +5,8 @@
 		"../sass/App.sass"
 	],
 	"sourcesContent": [
-		""
+		".main-container {\n    display: flex;\n    justify-content: center;\n    border: 1px solid black; }\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAAA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,MAAM,EAAE,eAAe;CAAG"
 }
