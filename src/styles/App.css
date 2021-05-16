@@ -1,8 +1,17 @@
-/* line 1, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
-.main-container {
+/* line 6, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
+body {
+  background-color: #DBCDC6;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+/* line 12, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
+.main-container {
+  height: 100%;
+  background-color: #EAD7D1;
   border: 1px solid black;
+  width: 100%;
 }
 
 /*# sourceMappingURL=App.css.map */

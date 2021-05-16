@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import SchedMonth from '../sched-components/sched-month'
 import FilterSched from '../../filter-sched'
 
+import '../../../styles/sched.css'
+
 let filterPrac = 'Все', filterMas = 'Все';//Фильтры для расписания
 export default class Scheduele extends Component {
     constructor(props) {
@@ -19,23 +21,63 @@ export default class Scheduele extends Component {
                         { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
                     ],
                     [//массив-день
-                        { day: 'ВТ', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
-                        { day: 'ВТ', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
-                        { day: 'ВТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
-                        { day: 'ВТ', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
-                        { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
-                        { day: 'ВТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
+                        { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+                        { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+                        
+                        { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
+                    ],[//массив-день
+                        { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
+                        { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
+                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
+                        { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
+                        { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
+                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
+                    ],
+                    [//массив-день
+                        { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+                        { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+                        
+                        { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
+                    ],[//массив-день
+                        { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 1 },
+                        { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 2 },
+                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 3 },
+                        { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 4 },
+                        { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 5 },
+                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 6 }
+                    ],
+                    [//массив-день
+                        { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+                        { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+                        
+                        { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+                        { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
                     ],
                 ],
 
                 [//массив-неделя
                     [//массив-день
-                        { day: 'ПН', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
-                        { day: 'ПН', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
-                        { day: 'ПН', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
-                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 10 },
-                        { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
-                        { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
+                        { day: 'СР', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+                        { day: 'СР', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+                        { day: 'СР', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+                        { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 10 },
+                        { day: 'СР', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+                        { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '03.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
+                    ]
+                ],
+                [//массив-неделя
+                    [//массив-день
+                        { day: 'ЧТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 7 },
+                        { day: 'ЧТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 8 },
+                        { day: 'ЧТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 9 },
+                        { day: 'ЧТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Овсянников', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 10 },
+                        { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 11 },
+                        { day: 'ЧТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '00:00', place: 'Малый зал', key: 12 }
                     ]
                 ],
             ]
@@ -155,14 +197,19 @@ export default class Scheduele extends Component {
     render() {
         const { dynSched } = this.state;
         return (
-            <>
-                <FilterSched
-                    onFilterSched={this.onFilterSched}
-                    onReset={this.onReset}
-                />
-                <SchedMonth
-                    dynSched={dynSched} />
-            </>
+            <div className='schedule'>
+                <div className='filter'>
+                    <FilterSched
+                        onFilterSched={this.onFilterSched}
+                        onReset={this.onReset}
+                    />
+                </div>
+                <div className='sched'>
+                    <SchedMonth
+                        dynSched={dynSched}
+                    />
+                </div>
+            </div>
         );
     }
 }

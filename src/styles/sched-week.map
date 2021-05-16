@@ -5,8 +5,8 @@
 		"../sass/sched-week.sass"
 	],
 	"sourcesContent": [
-		""
+		".sched-week {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    border: 1px solid black; }\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAAA,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,eAAe;CAAG"
 }

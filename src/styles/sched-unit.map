@@ -5,8 +5,8 @@
 		"../sass/sched-unit.sass"
 	],
 	"sourcesContent": [
-		""
+		"$main-bg: #DBCDC6;\n$app-bg: #EAD7D1;\n$block-bg: #7B506F;\n\n.sched-unit {\n    background-color: $block-bg;\n    color: $main-bg;\n    text-align: center;\n    min-width: 8em;\n    max-width: 15em; }\n.pop-up {\n    display: none; }\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAIA,AAAA,WAAW,CAAC;EACR,gBAAgB,EAHT,OAAO;EAId,KAAK,EANC,OAAO;EAOb,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,GAAG;EACd,SAAS,EAAE,IAAI;CAAG;;;AACtB,AAAA,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;CAAG"
 }

@@ -1,2 +1,15 @@
+/* line 5, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-unit.sass */
+.sched-unit {
+  background-color: #7B506F;
+  color: #DBCDC6;
+  text-align: center;
+  min-width: 8em;
+  max-width: 15em;
+}
+
+/* line 11, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-unit.sass */
+.pop-up {
+  display: none;
+}
 
 /*# sourceMappingURL=sched-unit.css.map */

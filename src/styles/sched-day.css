@@ -1,2 +1,25 @@
+/* line 3, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-day.sass */
+.sched-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+/* line 8, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-day.sass */
+.date-stat {
+  background-color: #1F1A38;
+  color: #DBCDC6;
+  text-align: center;
+  width: 5%;
+}
+
+/* line 13, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-day.sass */
+.units {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 95%;
+}
 
 /*# sourceMappingURL=sched-day.css.map */

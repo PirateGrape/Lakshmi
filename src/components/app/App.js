@@ -11,6 +11,7 @@ import Schedule from '../schedule/sched'
 import About from '../about'
 
 import '../../styles/App.css'
+import '../../styles/nav-bar.css'
 
 export default function App() {
 
@@ -19,15 +20,26 @@ export default function App() {
       <Router>
         <div>
           <nav>
-            <ul>
-              <li>
+            <ul className='nav-bar'>
+              <li className='nav-item'
+              >
                 <Link to="/">Главная</Link>
               </li>
-              <li>
+              <li className='nav-item'
+              >
                 <Link to="/about">О нас</Link>
               </li>
-              <li>
+              <li className='nav-item'
+              >
                 <Link to="/schedule">Расписание</Link>
+              </li>
+              <li className='nav-item'
+              >
+                <Link to="/about-yoga">О йоге</Link>
+              </li>
+              <li className='nav-item'
+              >
+                <Link to="/prices">Цены</Link>
               </li>
             </ul>
           </nav>
@@ -38,6 +50,12 @@ export default function App() {
             </Route>
             <Route path="/schedule">
               <Schedule />
+            </Route>
+            <Route path="/about-yoga">
+              <p>Йога это клева</p>
+            </Route>
+            <Route path="/prices">
+              <p>Терпимо</p>
             </Route>
             <Route path="/">
               <HomePage />

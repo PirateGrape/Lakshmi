@@ -16,12 +16,15 @@ export default class FilterMas extends Component {
         }
         )
         return (
-            <select
-                id='filter'
-                className='mas'
-                onChange={onFilterSched}>
-                {options}
-            </select>
+            <div className='filter-mas'>
+                <div>Мастер: </div>
+                <select
+                    id='filter'
+                    className='mas'
+                    onChange={onFilterSched}>
+                    {options}
+                </select>
+            </div>
         )
     }
 }

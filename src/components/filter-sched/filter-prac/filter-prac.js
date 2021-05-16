@@ -16,12 +16,18 @@ export default class FilterPrac extends Component {
         }
         )
         return (
-            <select
-                id='filter'
-                className='prac'
-                onChange={onFilterSched}>
-                {options}
-            </select>
+            <div className='filter-prac'>
+                <div>
+                    Практика:
+                </div>
+                <select
+                    id='filter'
+                    className='prac'
+                    onChange={onFilterSched}>
+                    {options}
+                </select>
+            </div>
+
         )
     }
 }

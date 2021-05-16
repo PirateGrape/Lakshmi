@@ -1,0 +1,43 @@
+/* line 6, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/nav-bar.sass */
+nav {
+  width: 100%;
+  padding: 0;
+}
+
+/* line 9, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/nav-bar.sass */
+nav .nav-bar {
+  padding: 0;
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+}
+
+/* line 17, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/nav-bar.sass */
+nav .nav-bar .nav-item {
+  background-color: #7B506F;
+  text-align: center;
+  width: 100%;
+  border: 1px solid black;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+/* line 27, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/nav-bar.sass */
+nav .nav-bar .nav-item:hover {
+  background-color: #1F1A38;
+}
+
+/* line 29, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/nav-bar.sass */
+nav .nav-bar .nav-item a {
+  text-decoration: none;
+  color: #EAD7D1;
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=nav-bar.css.map */

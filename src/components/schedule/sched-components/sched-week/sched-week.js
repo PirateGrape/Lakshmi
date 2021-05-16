@@ -15,7 +15,7 @@ export default class SchedWeek extends Component {
         })
 
         return (
-            <div className="week">
+            <div className="sched-week">
                 {week}
             </div>
         )

@@ -1,2 +1,9 @@
+/* line 1, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-week.sass */
+.sched-week {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+}
 
 /*# sourceMappingURL=sched-week.css.map */

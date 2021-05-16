@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "sched-month.css",
+	"sources": [
+		"../sass/sched-month.sass"
+	],
+	"sourcesContent": [
+		".shed {\n    height: 100%; }\n\n.sched-month {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    height: 100%; }\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,KAAK,CAAC;EACF,MAAM,EAAE,IAAI;CAAG;;;AAEnB,AAAA,YAAY,CAAC;EACT,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,IAAI;CAAG"
+}

@@ -1,0 +1,15 @@
+/* line 1, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-month.sass */
+.shed {
+  height: 100%;
+}
+
+/* line 4, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-month.sass */
+.sched-month {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/*# sourceMappingURL=sched-month.css.map */

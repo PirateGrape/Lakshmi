@@ -1,0 +1,22 @@
+/* line 1, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* line 5, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule .filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* line 9, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule .filter .filter-prac, .schedule .filter .filter-mas {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=sched.css.map */

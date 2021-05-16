@@ -5,8 +5,8 @@
 		"../sass/sched-day.sass"
 	],
 	"sourcesContent": [
-		""
+		"$main-bg: #DBCDC6;\n$active: #1F1A38;\n.sched-day {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    border: 1px solid black; }\n.date-stat {\n    background-color: $active;\n    color: $main-bg;\n    text-align: center;\n    width: 5%; }\n.units {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    width: 95%; }\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAEA,AAAA,UAAU,CAAC;EACP,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,eAAe;CAAG;;;AAC9B,AAAA,UAAU,CAAC;EACP,gBAAgB,EAPX,OAAO;EAQZ,KAAK,EATC,OAAO;EAUb,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,EAAE;CAAG;;;AAChB,AAAA,MAAM,CAAC;EACH,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;EAC7B,KAAK,EAAE,GAAG;CAAG"
 }
