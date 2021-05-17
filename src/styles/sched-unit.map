@@ -5,8 +5,8 @@
 		"../sass/sched-unit.sass"
 	],
 	"sourcesContent": [
-		"$main-bg: #DBCDC6;\n$app-bg: #EAD7D1;\n$block-bg: #7B506F;\n\n.sched-unit {\n    background-color: $block-bg;\n    color: $main-bg;\n    text-align: center;\n    min-width: 8em;\n    max-width: 15em; }\n.pop-up {\n    display: none; }\n"
+		"$main-bg: #DBCDC6;\n$app-bg: #EAD7D1;\n$block-bg: #7B506F;\n\n.sched-unit {\n    background-color: $block-bg;\n    color: $main-bg;\n    text-align: center;\n    min-width: 8em;\n    max-width: 15em;\n    width: clamp(8em, 10em, 20em);\n    border-top-right-radius: 27.5%;\n    border-top-left-radius: 27.5%;\n    .pop-up {\n        display: none; } }\n\n"
 	],
 	"names": [],
-	"mappings": ";AAIA,AAAA,WAAW,CAAC;EACR,gBAAgB,EAHT,OAAO;EAId,KAAK,EANC,OAAO;EAOb,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,GAAG;EACd,SAAS,EAAE,IAAI;CAAG;;;AACtB,AAAA,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;CAAG"
+	"mappings": ";AAIA,AAAA,WAAW,CAAC;EACR,gBAAgB,EAHT,OAAO;EAId,KAAK,EANC,OAAO;EAOb,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,GAAG;EACd,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,sBAAsB;EAC7B,uBAAuB,EAAE,KAAK;EAC9B,sBAAsB,EAAE,KAAK;CAEP;;;AAV1B,AASI,WATO,CASP,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;CAAG"
 }

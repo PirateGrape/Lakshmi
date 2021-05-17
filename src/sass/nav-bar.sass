@@ -4,31 +4,30 @@ $block-bg: #7B506F
 $active: #1F1A38
 
 nav
-    width: 100%
-    padding: 0
+    display: block
     .nav-bar
+        margin: 0
         padding: 0
-        margin-top: 0
         width: 100%
+        list-style: none
         display: flex
         flex-direction: row
-        justify-content: center
-        list-style-type: none
         .nav-item
-            background-color: $block-bg
-            text-align: center
             width: 100%
-            border: 1px solid black
+            display: flex
+            justify-content: center
+            align-items: center
+            text-decoration: none
+            
+            color: $main-bg
+            border: 1px solid $main-bg
             height: 3em
-            display: flex;
-            justify-content: center;
-            align-items: center;
             transition: all 1s
             &:hover
-                background-color: $active              
-            a
-                text-decoration: none
-                color: $app-bg
-                font-size: 1.2em
+                background-color: $active
+.non-active
+    background-color: $block-bg
+.active
+    background-color: $active
 
             

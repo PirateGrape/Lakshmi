@@ -4,14 +4,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #1F1A38;
 }
 
-/* line 12, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
+/* line 13, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
 .main-container {
+  padding-top: 0;
   height: 100%;
   background-color: #EAD7D1;
   border: 1px solid black;
   width: 100%;
+}
+
+/* line 19, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/App.sass */
+.active {
+  background-color: #1F1A38;
 }
 
 /*# sourceMappingURL=App.css.map */

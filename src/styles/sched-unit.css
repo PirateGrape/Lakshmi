@@ -5,10 +5,13 @@
   text-align: center;
   min-width: 8em;
   max-width: 15em;
+  width: clamp(8em, 10em, 20em);
+  border-top-right-radius: 27.5%;
+  border-top-left-radius: 27.5%;
 }
 
-/* line 11, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-unit.sass */
-.pop-up {
+/* line 14, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched-unit.sass */
+.sched-unit .pop-up {
   display: none;
 }
 

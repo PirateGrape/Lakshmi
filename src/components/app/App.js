@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom'
 
 import HomePage from '../home'
@@ -21,30 +21,26 @@ export default function App() {
         <div>
           <nav>
             <ul className='nav-bar'>
-              <li className='nav-item'
-              >
-                <Link to="/">Главная</Link>
-              </li>
-              <li className='nav-item'
-              >
-                <Link to="/about">О нас</Link>
-              </li>
-              <li className='nav-item'
-              >
-                <Link to="/schedule">Расписание</Link>
-              </li>
-              <li className='nav-item'
-              >
-                <Link to="/about-yoga">О йоге</Link>
-              </li>
-              <li className='nav-item'
-              >
-                <Link to="/prices">Цены</Link>
-              </li>
+              <NavLink to="/"
+                exact={true}
+                className='nav-item non-active'
+                activeClassName='active'>Главная</NavLink>
+              <NavLink to="/about"
+                className='nav-item non-active'
+                activeClassName='active'>О нас</NavLink>
+              <NavLink to="/schedule"
+                className='nav-item non-active'
+                activeClassName='active'>Расписание</NavLink>
+              <NavLink to="/about-yoga"
+                className='nav-item non-active'
+                activeClassName='active'>О йоге</NavLink>
+              <NavLink to="/prices"
+                className='nav-item non-active'
+                activeClassName='active'>Цены</NavLink>
             </ul>
           </nav>
 
-           <Switch>
+          <Switch>
             <Route path="/about">
               <About />
             </Route>
