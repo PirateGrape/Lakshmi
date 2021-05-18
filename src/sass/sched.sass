@@ -1,12 +1,27 @@
+$main-bg: #DBCDC6
+$block-bg: #7B506F
+$active: #1F1A38
+    
 .schedule
     display: flex
     flex-direction: column
     justify-content: space-between
+    button
+        background-color: $block-bg
+        color: $main-bg
     .filter
         display: flex
         flex-direction: row
-        justify-content: space-around
+        justify-content: flex-start
+    .change-room-box
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        align-content: space-between
         .filter-prac, .filter-mas
             border: 1px solid black
             display: flex
             flex-direction: row
+
+button.active
+    background-color: $active

@@ -17,9 +17,7 @@ export default class FilterTime extends Component {
         )
         return (
             <div className='filter-prac'>
-                <div>
-                    Время:
-                </div>
+                <div>Время</div>
                 <select
                     id='filter'
                     className='time'

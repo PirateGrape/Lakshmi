@@ -17,9 +17,7 @@ export default class FilterPrac extends Component {
         )
         return (
             <div className='filter-prac'>
-                <div>
-                    Практика:
-                </div>
+                <div>Практика</div>
                 <select
                     id='filter'
                     className='prac'

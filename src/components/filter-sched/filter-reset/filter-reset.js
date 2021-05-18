@@ -5,10 +5,10 @@ export default class FilterResetButton extends Component {
 
 
     render() {
-        const { onReset } = this.props;
+        const { onReset, onClearFilters } = this.props;
         return (
             <button
-                onClick={onReset}>Сбросить фильтр</button>
+                onClick={() => {onReset(); onClearFilters()}}>Сбросить фильтр</button>
         )
     }
 }

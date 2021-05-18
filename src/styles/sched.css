@@ -1,22 +1,41 @@
-/* line 1, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+/* line 5, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
 .schedule {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* line 5, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+/* line 9, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule button {
+  background-color: #7B506F;
+  color: #DBCDC6;
+}
+
+/* line 12, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
 .schedule .filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
-/* line 9, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
-.schedule .filter .filter-prac, .schedule .filter .filter-mas {
+/* line 16, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule .change-room-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: space-between;
+}
+
+/* line 21, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+.schedule .change-room-box .filter-prac, .schedule .change-room-box .filter-mas {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
+}
+
+/* line 26, C:/Users/000/Desktop/my_docs/personal/my_little_project/Lakshmi/src/sass/sched.sass */
+button.active {
+  background-color: #1F1A38;
 }
 
 /*# sourceMappingURL=sched.css.map */

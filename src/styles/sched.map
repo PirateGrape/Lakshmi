@@ -5,8 +5,8 @@
 		"../sass/sched.sass"
 	],
 	"sourcesContent": [
-		".schedule {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    .filter {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        .filter-prac, .filter-mas {\n            border: 1px solid black;\n            display: flex;\n            flex-direction: row; } } }\n"
+		"$main-bg: #DBCDC6;\n$block-bg: #7B506F;\n$active: #1F1A38;\n\n.schedule {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    button {\n        background-color: $block-bg;\n        color: $main-bg; }\n    .filter {\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-start; }\n    .change-room-box {\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-end;\n        align-content: space-between;\n        .filter-prac, .filter-mas {\n            border: 1px solid black;\n            display: flex;\n            flex-direction: row; } } }\n\nbutton.active {\n    background-color: $active; }\n"
 	],
 	"names": [],
-	"mappings": ";AAAA,AAAA,SAAS,CAAC;EACN,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;CAQI;;;AAXtC,AAII,SAJK,CAIL,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;CAID;;;AAXpC,AAQQ,SARC,CAIL,OAAO,CAIH,YAAY,EARpB,SAAS,CAIL,OAAO,CAIW,WAAW,CAAC;EACtB,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CAAG"
+	"mappings": ";AAIA,AAAA,SAAS,CAAC;EACN,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;CAgBI;;;AAnBtC,AAII,SAJK,CAIL,MAAM,CAAC;EACH,gBAAgB,EARb,OAAO;EASV,KAAK,EAVH,OAAO;CAUS;;;AAN1B,AAOI,SAPK,CAOL,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,UAAU;CAAG;;;AAVtC,AAWI,SAXK,CAWL,gBAAgB,CAAC;EACb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,QAAQ;EACzB,aAAa,EAAE,aAAa;CAIA;;;AAnBpC,AAgBQ,SAhBC,CAWL,gBAAgB,CAKZ,YAAY,EAhBpB,SAAS,CAWL,gBAAgB,CAKE,WAAW,CAAC;EACtB,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;CAAG;;;AAElC,AAAA,MAAM,AAAA,OAAO,CAAC;EACV,gBAAgB,EAxBX,OAAO;CAwBgB"
 }

@@ -7,7 +7,7 @@ export default class SchedWeek extends Component {
     render() {
         const { dynSched } = this.props;
         const week = dynSched.map(day => {
-            const dynSched = day
+            const dynSched = day;
             return (
                 <SchedDay dynSched={dynSched}
                 />

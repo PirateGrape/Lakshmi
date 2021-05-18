@@ -17,7 +17,7 @@ export default class FilterMas extends Component {
         )
         return (
             <div className='filter-mas'>
-                <div>Мастер: </div>
+                <div>Мастер </div>
                 <select
                     id='filter'
                     className='mas'
