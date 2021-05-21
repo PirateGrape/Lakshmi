@@ -2,144 +2,149 @@ import React, { Component } from 'react'
 import SchedMonth from '../sched-components/sched-month'
 import FilterSched from '../../filter-sched'
 import SchedChangeRoom from '../sched-change-room'
+import activeSched from '../sched-components/active_schedule/active_schedule.json'
 
 import '../../../styles/sched.css'
 
+
 let filterPrac = 'Все', filterMas = 'Все', filterTime = 'Все';//Фильтры для расписания
-const smallSched = [//массив-месяц
-    [//массив-неделя
-        [//массив-день
-            { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 1 },
-            { day: 'ПН', pracName: 'Супта', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 2 },
-            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 3 },
-            { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 4 },
-            { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 5 },
-            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 6 }
-        ],
-        [//массив-день
-            { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '11:30', place: 'Малый зал', key: 7 },
-            { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 8 },
-            { day: 'ВТ', pracName: 'Падма', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 9 },
-            { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 10 },
-            { day: 'ВТ', pracName: 'Супта', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 11 }
-        ], [//массив-день
-            { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 12 },
-            { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 13 },
-            { day: 'ПН', pracName: 'НС', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 14 },
-            { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 15 },
-            { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 16 },
-            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 17 }
-        ],
-        [//массив-день
-            { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 18 },
-            { day: 'ВТ', pracName: 'НС', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 19 },
-            { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 20 },
-            { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 21 },
-            { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 22 }
-        ], [//массив-день
-            { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '8:00', place: 'Малый зал', key: 23 },
-            { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 24 },
-            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 25 },
-            { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 26 },
-            { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 27 },
-            { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 28 }
-        ],
-        [//массив-день
-            { day: 'ВТ', pracName: 'Падма', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 29 },
-            { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 30 },
-            { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 31 },
-            { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 32 },
-            { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 33 }
-        ],
-    ],
-    [//массив-неделя
-        [//массив-день
-            { day: 'СР', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 34 },
-            { day: 'СР', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '10:00', place: 'Малый зал', key: 35 },
-            { day: 'СР', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '11:30', place: 'Малый зал', key: 36 },
-            { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 37 },
-            { day: 'СР', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '03.05.2021', time: '16:00', place: 'Малый зал', key: 38 },
-            { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '03.05.2021', time: '20:30', place: 'Малый зал', key: 39 }
-        ]
-    ],
-    [//массив-неделя
-        [//массив-день
-            { day: 'ЧТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 40 },
-            { day: 'ЧТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 41 },
-            { day: 'ЧТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 42 },
-            { day: 'ЧТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Овсянников', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 43 },
-            { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 44 },
-            { day: 'ЧТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 45 }
-        ]
-    ],
-],
-    bigSched = [//массив-месяц
-        [//массив-неделя
-            [//массив-день
-                { day: 'ПН', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Алексей Сартаков', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 101 },
-                { day: 'ПН', pracName: 'Баланс', pic: 'img/draft_pic.jpg', mName: 'Алена', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 102 },
-                { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 103 },
-                { day: 'ПН', pracName: 'Будха', pic: './img/draft_pic.jpg', mName: 'Галина', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 104 },
-                { day: 'ПН', pracName: 'Раджака', pic: './img/draft_pic.jpg', mName: 'Вячеслава', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 105 },
-                { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 106 }
-            ],
-            [//массив-день
-                { day: 'ВТ', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '11:30', place: 'Малый зал', key: 107 },
-                { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Мария', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 108 },
-                { day: 'ВТ', pracName: 'Падма', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 109 },
-                { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Алексей Сартаков', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 110 },
-                { day: 'ВТ', pracName: 'Супта', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 111 }
-            ], [//массив-день
-                { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 112 },
-                { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 113 },
-                { day: 'ПН', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 114 },
-                { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 115 },
-                { day: 'ПН', pracName: 'Будха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 116 },
-                { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 117 }
-            ],
-            [//массив-день
-                { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 118 },
-                { day: 'ВТ', pracName: 'Баланс', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 119 },
-                { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 120 },
-                { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 121 },
-                { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 122 }
-            ], [//массив-день
-                { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '8:00', place: 'Малый зал', key: 123 },
-                { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 124 },
-                { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 125 },
-                { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 26 },
-                { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 127 },
-                { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 128 }
-            ],
-            [//массив-день
-                { day: 'ВТ', pracName: 'Падма', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 129 },
-                { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 130 },
-                { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 131 },
-                { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 132 },
-                { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 133 }
-            ],
-        ],
-        [//массив-неделя
-            [//массив-день
-                { day: 'СР', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 134 },
-                { day: 'СР', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '10:00', place: 'Малый зал', key: 135 },
-                { day: 'СР', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '11:30', place: 'Малый зал', key: 136 },
-                { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 137 },
-                { day: 'СР', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '03.05.2021', time: '16:00', place: 'Малый зал', key: 138 },
-                { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '03.05.2021', time: '20:30', place: 'Малый зал', key: 139 }
-            ]
-        ],
-        [//массив-неделя
-            [//массив-день
-                { day: 'ЧТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 140 },
-                { day: 'ЧТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 141 },
-                { day: 'ЧТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 142 },
-                { day: 'ЧТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Овсянников', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 143 },
-                { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 144 },
-                { day: 'ЧТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 145 }
-            ]
-        ],
-    ];
+// const smallSched = [//массив-месяц
+//     [//массив-неделя
+//         [//массив-день
+//             { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 1 },
+//             { day: 'ПН', pracName: 'Супта', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 2 },
+//             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 3 },
+//             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 4 },
+//             { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 5 },
+//             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 6 }
+//         ],
+//         [//массив-день
+//             { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '11:30', place: 'Малый зал', key: 7 },
+//             { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 8 },
+//             { day: 'ВТ', pracName: 'Падма', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 9 },
+//             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 10 },
+//             { day: 'ВТ', pracName: 'Супта', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 11 }
+//         ], [//массив-день
+//             { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 12 },
+//             { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 13 },
+//             { day: 'ПН', pracName: 'НС', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 14 },
+//             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 15 },
+//             { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 16 },
+//             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 17 }
+//         ],
+//         [//массив-день
+//             { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 18 },
+//             { day: 'ВТ', pracName: 'НС', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 19 },
+//             { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 20 },
+//             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 21 },
+//             { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 22 }
+//         ], [//массив-день
+//             { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '8:00', place: 'Малый зал', key: 23 },
+//             { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 24 },
+//             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 25 },
+//             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 26 },
+//             { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 27 },
+//             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 28 }
+//         ],
+//         [//массив-день
+//             { day: 'ВТ', pracName: 'Падма', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 29 },
+//             { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 30 },
+//             { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 31 },
+//             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 32 },
+//             { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 33 }
+//         ],
+//     ],
+//     [//массив-неделя
+//         [//массив-день
+//             { day: 'СР', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 34 },
+//             { day: 'СР', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '10:00', place: 'Малый зал', key: 35 },
+//             { day: 'СР', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '11:30', place: 'Малый зал', key: 36 },
+//             { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 37 },
+//             { day: 'СР', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '03.05.2021', time: '16:00', place: 'Малый зал', key: 38 },
+//             { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '03.05.2021', time: '20:30', place: 'Малый зал', key: 39 }
+//         ]
+//     ],
+//     [//массив-неделя
+//         [//массив-день
+//             { day: 'ЧТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 40 },
+//             { day: 'ЧТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 41 },
+//             { day: 'ЧТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 42 },
+//             { day: 'ЧТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Овсянников', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 43 },
+//             { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 44 },
+//             { day: 'ЧТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 45 }
+//         ]
+//     ],
+// ],
+    // bigSched = [//массив-месяц
+    //     [//массив-неделя
+    //         [//массив-день
+    //             { day: 'ПН', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Алексей Сартаков', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 101 },
+    //             { day: 'ПН', pracName: 'Баланс', pic: 'img/draft_pic.jpg', mName: 'Алена', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 102 },
+    //             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 103 },
+    //             { day: 'ПН', pracName: 'Будха', pic: './img/draft_pic.jpg', mName: 'Галина', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 104 },
+    //             { day: 'ПН', pracName: 'Раджака', pic: './img/draft_pic.jpg', mName: 'Вячеслава', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 105 },
+    //             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 106 }
+    //         ],
+    //         [//массив-день
+    //             { day: 'ВТ', pracName: 'Будха', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '11:30', place: 'Малый зал', key: 107 },
+    //             { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Мария', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 108 },
+    //             { day: 'ВТ', pracName: 'Падма', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 109 },
+    //             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Алексей Сартаков', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 110 },
+    //             { day: 'ВТ', pracName: 'Супта', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 111 }
+    //         ], [//массив-день
+    //             { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 112 },
+    //             { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 113 },
+    //             { day: 'ПН', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '10:00', place: 'Малый зал', key: 114 },
+    //             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 115 },
+    //             { day: 'ПН', pracName: 'Будха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 116 },
+    //             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 117 }
+    //         ],
+    //         [//массив-день
+    //             { day: 'ВТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 118 },
+    //             { day: 'ВТ', pracName: 'Баланс', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 119 },
+    //             { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 120 },
+    //             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 121 },
+    //             { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 122 }
+    //         ], [//массив-день
+    //             { day: 'ПН', pracName: 'Париврита', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '8:00', place: 'Малый зал', key: 123 },
+    //             { day: 'ПН', pracName: 'Цикл воина', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 124 },
+    //             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 125 },
+    //             { day: 'ПН', pracName: 'Армус', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 26 },
+    //             { day: 'ПН', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 127 },
+    //             { day: 'ПН', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 128 }
+    //         ],
+    //         [//массив-день
+    //             { day: 'ВТ', pracName: 'Падма', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 129 },
+    //             { day: 'ВТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '8:00', place: 'Малый зал', key: 130 },
+    //             { day: 'ВТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '12:00', place: 'Малый зал', key: 131 },
+    //             { day: 'ВТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 132 },
+    //             { day: 'ВТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 133 }
+    //         ],
+    //     ],
+    //     [//массив-неделя
+    //         [//массив-день
+    //             { day: 'СР', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '01.05.2021', time: '6:30', place: 'Малый зал', key: 134 },
+    //             { day: 'СР', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '03.05.2021', time: '10:00', place: 'Малый зал', key: 135 },
+    //             { day: 'СР', pracName: 'Баланс', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '11:30', place: 'Малый зал', key: 136 },
+    //             { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '03.05.2021', time: '12:00', place: 'Малый зал', key: 137 },
+    //             { day: 'СР', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '03.05.2021', time: '16:00', place: 'Малый зал', key: 138 },
+    //             { day: 'СР', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Вера', date: '03.05.2021', time: '20:30', place: 'Малый зал', key: 139 }
+    //         ]
+    //     ],
+    //     [//массив-неделя
+    //         [//массив-день
+    //             { day: 'ЧТ', pracName: 'Раджака', pic: '../../img/draft_pic', mName: 'Слава Овсянников', date: '05.05.2021', time: '9:45', place: 'Малый зал', key: 140 },
+    //             { day: 'ЧТ', pracName: 'Сету Бандха', pic: 'img/draft_pic.jpg', mName: 'Олеся', date: '05.05.2021', time: '11:30', place: 'Малый зал', key: 141 },
+    //             { day: 'ЧТ', pracName: 'Париврита', pic: './img/draft_pic.jpg', mName: 'Слава Хиль', date: '05.05.2021', time: '16:00', place: 'Малый зал', key: 142 },
+    //             { day: 'ЧТ', pracName: 'Ханумана', pic: './img/draft_pic.jpg', mName: 'Слава Овсянников', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 143 },
+    //             { day: 'ЧТ', pracName: 'Самакона', pic: './img/draft_pic.jpg', mName: 'Вера', date: '05.05.2021', time: '18:30', place: 'Малый зал', key: 144 },
+    //             { day: 'ЧТ', pracName: 'Сету Бандха', pic: './img/draft_pic.jpg', mName: 'Марина Овсянникова', date: '05.05.2021', time: '20:30', place: 'Малый зал', key: 145 }
+    //         ]
+    //     ],
+    // ];
+
+const {bigSched, smallSched, sevSched} = activeSched;
+console.log(sevSched)
 
 export default class Scheduele extends Component {
     constructor(props) {
@@ -152,7 +157,6 @@ export default class Scheduele extends Component {
         };
         this._statSched = this.state.dynSched//Статическое расписание вне стейта, потому что оно не должно меняться
     }
-
 
     //Функция-фильтр для расписания. При помощи селектов над расписанием пользователь сможет получать расписание только с определенным местером или по определенной практике
 
@@ -295,6 +299,7 @@ export default class Scheduele extends Component {
                     <SchedChangeRoom
                         smallSched={smallSched}
                         bigSched={bigSched}
+                        sevSched={sevSched}
                         onChangeRoom={this.onChangeRoom}
                         onActivateBtn={this.onActivateBtn}
                         onClearFilters={this.onClearFilters}

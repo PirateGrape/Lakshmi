@@ -6,7 +6,8 @@ export default class SchedChangeRoom extends Component {
         buttons.forEach(button => { console.log(button) })
     }
     render() {
-        const { onChangeRoom, onActivateBtn, smallSched, bigSched, onClearFilters } = this.props;
+        const { onChangeRoom, onActivateBtn, smallSched, bigSched, sevSched, onClearFilters } = this.props;
+
         return (
             <div className='change-room-box'>
                 <button className='btn small active'
@@ -22,6 +23,12 @@ export default class SchedChangeRoom extends Component {
                         onActivateBtn(e, '.btn');
                         onClearFilters();
                     }}>Большой зал</button>
+                <button className='btn big'
+                    onClick={(e) => {
+                        onChangeRoom(sevSched);
+                        onActivateBtn(e, '.btn');
+                        onClearFilters();
+                    }}>Северск</button>
             </div>
         )
     }

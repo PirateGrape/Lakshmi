@@ -7,17 +7,17 @@ export default class SchedMonth extends Component {
 
     render() {
         const { dynSched } = this.props;
-
+        let o = 1000; //Индексация
         const month = dynSched.map(week => {
+            o++; //Индексация
             const dynSched = week
             return (
                 < SchedWeek
                     dynSched={dynSched}
-                    key={week.length}
+                    key={o.toString()} //Индексация
                 />
             )
         })
-
 
         return (
             <div className="sched-month"
